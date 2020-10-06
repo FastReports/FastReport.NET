@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div style="float:right">    
+ @using (Html.BeginForm("GetFile", "Home"))
+ {
+         <input id="pdf" type="submit" value="Export to PDF" />
+ }
+</div>
+
+@ViewBag.WebReport.GetHtml()

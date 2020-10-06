@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" TextQuality="Regular" ReportInfo.Description="Demonstrates simple list report. To create it:&#13;&#10;&#13;&#10;- go to &quot;Data&quot; menu and select &quot;Choose Report Data...&quot; item to select datasource;&#13;&#10;&#13;&#10;- go to &quot;Report|Configure Bands...&quot; menu to create the band structure;&#13;&#10;&#13;&#10;- return to the report page, doubleclick the data band to show its editor;&#13;&#10;&#13;&#10;- choose the datasource;&#13;&#10;&#13;&#10;- drag data from the Data Dictionary window to the band." ReportInfo.Created="01/17/2008 03:05:57" ReportInfo.Modified="05/29/2013 01:40:43" ReportInfo.CreatorVersion="1.0.0.0">
+  <Dictionary>
+    <XmlDataConnection Name="Connection" ConnectionString="rijcmlqmmfdjkQxfe1iwShBNGpud5OG7+id31oHMLAaKcbrauuJqFsG+bYl9FvGcg8yLfSimPpCLt+A4qxjLMEi/HANPA==">
+      <TableDataSource Name="Employees1" Alias="Employees" DataType="System.Int32" Enabled="true" TableName="Employees">
+        <Column Name="EmployeeID" DataType="System.Int32"/>
+        <Column Name="LastName" DataType="System.String"/>
+        <Column Name="FirstName" DataType="System.String"/>
+        <Column Name="Title" DataType="System.String"/>
+        <Column Name="TitleOfCourtesy" DataType="System.String"/>
+        <Column Name="BirthDate" DataType="System.DateTime"/>
+        <Column Name="HireDate" DataType="System.DateTime"/>
+        <Column Name="Address" DataType="System.String"/>
+        <Column Name="City" DataType="System.String"/>
+        <Column Name="Region" DataType="System.String"/>
+        <Column Name="PostalCode" DataType="System.String"/>
+        <Column Name="Country" DataType="System.String"/>
+        <Column Name="HomePhone" DataType="System.String"/>
+        <Column Name="Extension" DataType="System.String"/>
+        <Column Name="Photo" DataType="System.Byte[]" BindableControl="Picture"/>
+        <Column Name="Notes" DataType="System.String"/>
+        <Column Name="ReportsTo" DataType="System.Int32"/>
+      </TableDataSource>
+    </XmlDataConnection>
+    <Relation Name="CategoriesProducts" ParentDataSource="null" ChildDataSource="null" ParentColumns="CategoryID" ChildColumns="CategoryID" Enabled="true"/>
+    <Relation Name="SuppliersProducts" ParentDataSource="null" ChildDataSource="null" ParentColumns="SupplierID" ChildColumns="SupplierID" Enabled="true"/>
+    <Relation Name="CustomersOrders" ParentDataSource="null" ChildDataSource="null" ParentColumns="CustomerID" ChildColumns="CustomerID" Enabled="true"/>
+    <Relation Name="ShippersOrders" ParentDataSource="null" ChildDataSource="null" ParentColumns="ShipperID" ChildColumns="ShipVia" Enabled="true"/>
+    <Relation Name="EmployeesOrders" ParentDataSource="Employees1" ChildDataSource="null" ParentColumns="EmployeeID" ChildColumns="EmployeeID" Enabled="true"/>
+    <Relation Name="ProductsOrderDetails" ParentDataSource="null" ChildDataSource="null" ParentColumns="ProductID" ChildColumns="ProductID" Enabled="true"/>
+    <Relation Name="OrdersOrderDetails" ParentDataSource="null" ChildDataSource="null" ParentColumns="OrderID" ChildColumns="OrderID" Enabled="true"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="56.7">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Text="EMPLOYEES" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 14pt, style=Bold"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="60.7" Width="718.2" Height="151.2" CanGrow="true" CanShrink="true" DataSource="Employees1">
+      <TextObject Name="Text2" Left="189" Width="321.3" Height="28.35" Border.Lines="All" Border.Color="Gainsboro" Fill="Glass" Fill.Color="239, 239, 239" Fill.Blend="0.73" Fill.Hatch="false" Text="[Employees.FirstName] [Employees.LastName]" VertAlign="Center" Font="Tahoma, 12pt, style=Bold"/>
+      <PictureObject Name="Picture1" Width="160.65" Height="151.2" Border.Lines="All" Border.Color="Gainsboro" Border.Width="2" CanGrow="true" CanShrink="true" SizeMode="AutoSize" DataColumn="Employees.Photo"/>
+      <TextObject Name="Text3" Left="189" Top="37.8" Width="85.05" Height="18.9" Text="Birth date:" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text4" Left="283.5" Top="37.8" Width="226.8" Height="18.9" Text="[Employees.BirthDate]" Format="Date" Format.Format="D" Font="Tahoma, 8pt"/>
+      <TextObject Name="Text5" Left="189" Top="56.7" Width="85.05" Height="18.9" Text="Address:" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text6" Left="283.5" Top="56.7" Width="226.8" Height="18.9" CanGrow="true" Text="[Employees.Address]" Font="Tahoma, 8pt"/>
+      <TextObject Name="Text7" Left="189" Top="75.6" Width="85.05" Height="18.9" Text="Phone:" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text8" Left="283.5" Top="75.6" Width="226.8" Height="18.9" Text="[Employees.HomePhone]" Font="Tahoma, 8pt"/>
+      <TextObject Name="Text9" Left="189" Top="103.95" Width="321.3" Height="18.9" CanGrow="true" CanShrink="true" Text="[Employees.Notes]" HorzAlign="Justify" Font="Tahoma, 8pt"/>
+      <ChildBand Name="Child1" Top="215.9" Width="718.2" Height="37.8">
+        <LineObject Name="Line1" Top="18.9" Width="510.3" Border.Color="Gainsboro"/>
+      </ChildBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="257.7" Width="718.2" Height="18.9">
+      <TextObject Name="Text10" Left="623.7" Width="94.5" Height="18.9" Text="[PageN]" HorzAlign="Right" Font="Tahoma, 8pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ReportService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:4491/ReportService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:4491/ReportService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:4491/ReportService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FastReport.Service" />
+      <xsd:import schemaLocation="http://localhost:4491/ReportService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:4491/ReportService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFastReportService_About_InputMessage">
+    <wsdl:part name="parameters" element="tns:About" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_About_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AboutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetReportsListByPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportsListByPath" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetReportsListByPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportsListByPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetReportsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportsList" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetReportsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetGearList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGearList" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetGearList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGearListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReport" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetHTML_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHTML" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetHTML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHTMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetPDF_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPDF" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetPDF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTest" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_CheckPreparedReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPreparedReport" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_CheckPreparedReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPreparedReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_PutPreparedReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:PutPreparedReport" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_PutPreparedReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PutPreparedReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetPreparedByUUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPreparedByUUID" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetPreparedByUUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPreparedByUUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetHTMLByUUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHTMLByUUID" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetHTMLByUUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHTMLByUUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetPDFByUUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPDFByUUID" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetPDFByUUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPDFByUUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetLogoByUUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogoByUUID" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetLogoByUUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogoByUUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetLogoByUUIDFixed_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogoByUUIDFixed" />
+  </wsdl:message>
+  <wsdl:message name="IFastReportService_GetLogoByUUIDFixed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogoByUUIDFixedResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFastReportService">
+    <wsdl:operation name="About">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/About" message="tns:IFastReportService_About_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/AboutResponse" message="tns:IFastReportService_About_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsListByPath">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/GetReportsListByPath" message="tns:IFastReportService_GetReportsListByPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/GetReportsListByPathResponse" message="tns:IFastReportService_GetReportsListByPath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/GetReportsList" message="tns:IFastReportService_GetReportsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/GetReportsListResponse" message="tns:IFastReportService_GetReportsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGearList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/GetGearList" message="tns:IFastReportService_GetGearList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/GetGearListResponse" message="tns:IFastReportService_GetGearList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/GetReport" message="tns:IFastReportService_GetReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/GetReportResponse" message="tns:IFastReportService_GetReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHTML">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/GetHTML" message="tns:IFastReportService_GetHTML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/GetHTMLResponse" message="tns:IFastReportService_GetHTML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPDF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/GetPDF" message="tns:IFastReportService_GetPDF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/GetPDFResponse" message="tns:IFastReportService_GetPDF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/GetTest" message="tns:IFastReportService_GetTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/GetTestResponse" message="tns:IFastReportService_GetTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPreparedReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/CheckPreparedReport" message="tns:IFastReportService_CheckPreparedReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/CheckPreparedReportResponse" message="tns:IFastReportService_CheckPreparedReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutPreparedReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/PutPreparedReport" message="tns:IFastReportService_PutPreparedReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/PutPreparedReportResponse" message="tns:IFastReportService_PutPreparedReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreparedByUUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/GetPreparedByUUID" message="tns:IFastReportService_GetPreparedByUUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/GetPreparedByUUIDResponse" message="tns:IFastReportService_GetPreparedByUUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHTMLByUUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/GetHTMLByUUID" message="tns:IFastReportService_GetHTMLByUUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/GetHTMLByUUIDResponse" message="tns:IFastReportService_GetHTMLByUUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPDFByUUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/GetPDFByUUID" message="tns:IFastReportService_GetPDFByUUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/GetPDFByUUIDResponse" message="tns:IFastReportService_GetPDFByUUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogoByUUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/GetLogoByUUID" message="tns:IFastReportService_GetLogoByUUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/GetLogoByUUIDResponse" message="tns:IFastReportService_GetLogoByUUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogoByUUIDFixed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFastReportService/GetLogoByUUIDFixed" message="tns:IFastReportService_GetLogoByUUIDFixed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFastReportService/GetLogoByUUIDFixedResponse" message="tns:IFastReportService_GetLogoByUUIDFixed_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="ReportService" />
+</wsdl:definitions>

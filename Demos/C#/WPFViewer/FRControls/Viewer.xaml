@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="FRControls.Viewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             LayoutUpdated="viewer_LayoutUpdated"
+             Width="800"
+             Height="600"
+             BorderThickness="1" BorderBrush="Black"
+             Background="Gray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ToolBar Grid.Row="0" x:Name="toolBar" Height="28">
+            <Button Name="opnDesign" Click="opnDesign_Click">
+                <StackPanel>
+                    <Image Source="Resources/068.png"/>
+                    <Label Content="Design"/>
+                </StackPanel>
+            </Button>
+            <!--  <Button>Print</Button> -->
+            <Button Name="opnBtn" Click="opnBtn_Click">
+                <Image Source="Resources/001.ico"></Image>
+            </Button>
+            <!--    <Button>Save</Button>
+                <Button>Send by Email</Button>
+                <Button>Find text</Button>
+                -->
+
+            <Separator></Separator>
+            <Button Name="frstPageBtn" Click="frstPageBtn_Click">
+                <Image Source="Resources/frst.png"></Image>
+            </Button>
+            <Button Name="prrPageBtn" Click="prrPageBtn_Click">
+                <Image Source="Resources/prr.png"></Image>
+            </Button>
+            <TextBox Name="nbrPageTxt" KeyDown="nbrPageTxt_KeyDown" PreviewTextInput="nbrPageTxt_PreviewTextInput"  DataObject.Pasting="nbrPageTxt_Pasting" Width="50"/>
+            <Button Name="nxtPageBtn" Click="nxtPageBtn_Click">
+                <Image Source="Resources/nxt.png"></Image>
+            </Button>
+            <Button Name="lstPageBtn" Click="lstPageBtn_Click">
+                <Image Source="Resources/lst.png"></Image>
+            </Button>
+        </ToolBar>
+        <ScrollViewer Grid.Row="1" Name="scroll" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ListBox Name="lb" Background="Gray" ></ListBox>
+        </ScrollViewer>
+    </Grid>
+    </UserControl>

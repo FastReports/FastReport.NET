@@ -1,0 +1,113 @@
+﻿@* Удалите этот раздел, если используется объединение *@
+@section Scripts {
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+
+@{
+    Layout = "~/_SiteLayout.cshtml";
+    Page.Title = "Зарегистрироваться";
+
+    string email = "";
+    string loginData = "";
+    string providerDisplayName = "";
+
+    var returnUrl = Request.QueryString["ReturnUrl"];
+    if (returnUrl.IsEmpty()) {
+        // Некоторые внешние поставщики входа в систему требуют всегда указывать URL-адрес возврата
+        returnUrl = Href("~/");
+    }
+
+    // Настройка проверки
+    Validation.RequireField("email", "Поле имени пользователя является обязательным.");
+
+    if (IsPost && Request.Form["newAccount"].AsBool()) {
+        // Обработка формы регистрации новой учетной записи
+        AntiForgery.Validate();
+        email = Request.Form["email"];
+        loginData = Request.Form["loginData"];
+
+        string provider = "";
+        string providerUserId = "";
+        if (WebSecurity.IsAuthenticated || !OAuthWebSecurity.TryDeserializeProviderUserId(loginData, out provider, out providerUserId)) {
+            Response.Redirect("~/Account/Manage");
+            return;
+        }
+
+        providerDisplayName = OAuthWebSecurity.GetOAuthClientData(provider).DisplayName;
+        if (Validation.IsValid()) {
+            // Добавление нового пользователя в базу данных
+            var db = Database.Open("StarterSite");
+
+            // Проверка наличия пользователя в базе данных
+            var user = db.QuerySingle("SELECT Email FROM UserProfile WHERE LOWER(Email) = LOWER(@0)", email);
+            if (user == null) {
+                // Добавление адреса электронной почты в таблицу профиля
+                db.Execute("INSERT INTO UserProfile (Email) VALUES (@0)", email);
+                OAuthWebSecurity.CreateOrUpdateAccount(provider, providerUserId, email);
+
+                OAuthWebSecurity.Login(provider, providerUserId, createPersistentCookie: false);
+
+                Context.RedirectLocal(returnUrl);
+                return;
+            } else {
+                ModelState.AddError("email", "Имя пользователя уже существует. Введите другое имя пользователя.");
+            }
+        }
+    } else {
+        // Обработка обратных вызовов от внешнего поставщика входа в систему
+
+        var result = OAuthWebSecurity.VerifyAuthentication(Href("~/Account/RegisterService", new { returnUrl }));
+        if (result.IsSuccessful) {
+            bool registered = OAuthWebSecurity.Login(result.Provider, result.ProviderUserId, createPersistentCookie: false);
+            if (registered) {
+                Context.RedirectLocal(returnUrl);
+                return;
+            }
+
+            if (WebSecurity.IsAuthenticated) {
+                // Если текущий пользователь вошел в систему, добавить новую учетную запись
+                OAuthWebSecurity.CreateOrUpdateAccount(result.Provider, result.ProviderUserId, WebSecurity.CurrentUserName);
+                Context.RedirectLocal(returnUrl);
+                return;
+            } else {
+                // Новый пользователь, присвоить имени пользователя по умолчанию значение, полученное от внешнего поставщика входа в систему
+                email = result.UserName;
+                loginData = OAuthWebSecurity.SerializeProviderUserId(result.Provider, result.ProviderUserId);
+                providerDisplayName = OAuthWebSecurity.GetOAuthClientData(result.Provider).DisplayName;
+            }
+        } else {
+            Response.Redirect("~/Account/ExternalLoginFailure");
+            return;
+        }
+    }
+}
+<hgroup class="title">
+    <h1>@Page.Title.</h1>
+    <h2>Связывание вашей учетной записи @providerDisplayName.</h2>
+</hgroup>
+
+<form method="post">
+    @AntiForgery.GetHtml()
+    <input type="hidden" name="loginData" value="@loginData" />
+    @* Уведомлять пользователя при наличии хотя бы одной ошибки проверки *@
+    @Html.ValidationSummary(excludeFieldErrors: true)
+
+    <fieldset>
+        <legend>Форма регистрации</legend>
+        <p>
+            Успешно пройдена проверка подлинности <strong>@providerDisplayName</strong>. Введите
+            имя пользователя для этого сайта ниже и нажмите кнопку "Подтвердить", чтобы завершить вход
+            в систему.
+        </p>
+        <ol>
+            <li class="email">
+                <label for="email" @if (!ModelState.IsValidField("email")) {<text>class="error-label"</text>}>Адрес электронной почты</label>
+                <input type="text" id="email" name="email" value="@email" @Validation.For("email") />
+                @* Записать все ошибки проверки адреса электронной почты на странице *@
+                @Html.ValidationMessage("email")
+            </li>
+        </ol>
+        <button type="submit" name="newAccount" value="true">Зарегистрироваться</button>
+    </fieldset>
+</form>

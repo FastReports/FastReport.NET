@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/_SiteLayout.cshtml";
+    Page.Title = "Страница подтверждения регистрации";
+
+    string message = "";
+    var confirmationToken = Request["confirmationCode"];
+
+    WebSecurity.Logout();
+    if (!confirmationToken.IsEmpty()) {
+        if (WebSecurity.ConfirmAccount(confirmationToken)) {
+            message = "Регистрация завершена! Чтобы войти на сайт, щелкните вкладку \"Вход\".";
+        } else {
+            message = "Не удалось подтвердить данные регистрации.";
+        }
+    }
+}
+
+<hgroup class="title">
+    <h1>@Page.Title.</h1>
+    <h2>Используйте следующую форму для подтверждения учетной записи.</h2>
+</hgroup>
+
+@if (!message.IsEmpty()) {
+    <p>@message</p>
+} else {
+    <form method="post">
+        <fieldset>
+            <legend>Код подтверждения</legend>
+            <ol>
+                <li>
+                    <label for="confirmationCode">Код подтверждения</label>
+                    <input type="text" id="confirmationCode" name="confirmationCode" />
+                </li>
+            </ol>
+            <input type="submit" value="Подтвердить" />
+        </fieldset>
+    </form>
+}

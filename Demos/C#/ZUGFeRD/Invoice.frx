@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/20/2017 15:53:05" ReportInfo.Modified="03/20/2017 17:48:24" ReportInfo.CreatorVersion="2017.1.1.0">
+  <Dictionary/>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="406.35">
+      <TextObject Name="Text1" Left="406.35" Width="302.4" Height="151.2" Text="Haimerl Datentechnik&#13;&#10;Kreuzacker 10&#13;&#10;94356 Kirchroth / Kössnach&#13;&#10;Deutschland&#13;&#10;Tel.+49 (0)9428-305324&#13;&#10;Fax.+49 (0)9428-305325&#13;&#10;info@fast-report.de&#13;&#10;www.fast-report.de" Font="Tahoma, 10pt"/>
+      <TextObject Name="Text2" Left="18.9" Width="302.4" Height="28.35" Text="Haimerl Datentechnik" Font="Tahoma, 18pt, style=Bold"/>
+      <TextObject Name="Text3" Left="22.35" Top="28.35" Width="283.5" Height="18.9" Text="Vertriebspartner von Fast Reports Inc" Font="Tahoma, 10pt"/>
+      <TextObject Name="Text4" Left="47.25" Top="189" Width="302.4" Height="103.95" Text="Neue Grüne Horizonte GmbH&#13;&#10;Schorbachstrasse 9&#13;&#10;35510 Butzbach&#13;&#10;Deutschland" Font="Tahoma, 10pt"/>
+      <TextObject Name="Text5" Left="18.9" Top="311.85" Width="302.4" Height="18.9" Text="Rechnungsnummer: 2017-415" Font="Tahoma, 12pt, style=Bold"/>
+      <TextObject Name="Text6" Left="349.65" Top="311.85" Width="359.1" Height="66.15" Text="Liefer- und Rechnungsdatum: 20. März 2017&#13;&#10;Kundennummer: 125-544&#13;&#10;Ihre Auftragsnummer: ABC-555&#13;&#10;Beträge in EUR" Font="Tahoma, 10pt"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="408.27" Width="718.2" Height="207.9">
+      <TableObject Name="Table1" Left="18.9" Top="9.45" Width="689.85" Height="160.65" Border.Lines="All">
+        <TableColumn Name="Column1" Width="56.7"/>
+        <TableColumn Name="Column2" Width="396.9"/>
+        <TableColumn Name="Column3" Width="75.6"/>
+        <TableColumn Name="Column4" Width="85.05"/>
+        <TableColumn Name="Column5" Width="75.6"/>
+        <TableRow Name="Row1" Height="28.35">
+          <TableCell Name="Cell1" Border.Lines="Bottom" Fill.Color="LightGray" Text="Pos." HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt, style=Bold"/>
+          <TableCell Name="Cell2" Border.Lines="Bottom" Fill.Color="LightGray" Text="Artikelbeschreibung" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt, style=Bold"/>
+          <TableCell Name="Cell3" Border.Lines="Bottom" Fill.Color="LightGray" Text="Menge" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt, style=Bold"/>
+          <TableCell Name="Cell4" Border.Lines="Bottom" Fill.Color="LightGray" Text="Preis" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt, style=Bold"/>
+          <TableCell Name="Cell5" Border.Lines="Bottom" Fill.Color="LightGray" Text="Betrag" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="32.13">
+          <TableCell Name="Cell6" Text="1" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+          <TableCell Name="Cell7" Text="FastReport.Net Professional Edition Single License" VertAlign="Center" Font="Tahoma, 10pt"/>
+          <TableCell Name="Cell8" Text="1" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+          <TableCell Name="Cell9" Text="349" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+          <TableCell Name="Cell10" Text="349" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="32.13">
+          <TableCell Name="Cell11" Border.Lines="Bottom" Text="2" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+          <TableCell Name="Cell12" Border.Lines="Bottom" Text="FastReport.Net Win+WebForms Edition Single License" VertAlign="Center" Font="Tahoma, 10pt"/>
+          <TableCell Name="Cell13" Border.Lines="Bottom" Text="2" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+          <TableCell Name="Cell14" Border.Lines="Bottom" Text="249" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+          <TableCell Name="Cell15" Border.Lines="Bottom" Text="498" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row9" Height="22.68">
+          <TableCell Name="Cell41" Text="Rechnungssumme netto" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 10pt" ColSpan="4"/>
+          <TableCell Name="Cell42" VertAlign="Center"/>
+          <TableCell Name="Cell43" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell44" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell45" Text="847" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row10" Height="22.68">
+          <TableCell Name="Cell46" Text="zuzüglich 19% MwSt." HorzAlign="Right" VertAlign="Center" Font="Tahoma, 10pt" ColSpan="4"/>
+          <TableCell Name="Cell47" HorzAlign="Right" VertAlign="Center"/>
+          <TableCell Name="Cell48" HorzAlign="Right" VertAlign="Center"/>
+          <TableCell Name="Cell49" HorzAlign="Right" VertAlign="Center"/>
+          <TableCell Name="Cell50" Text="160,93" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row11" Height="22.68">
+          <TableCell Name="Cell51" Text="Rechnungssumme brutto" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 10pt" ColSpan="4"/>
+          <TableCell Name="Cell52" VertAlign="Center"/>
+          <TableCell Name="Cell53" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell54" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell55" Text="1007,93" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 10pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="618.1" Width="718.2" Height="66.15">
+      <TextObject Name="Text7" Left="18.9" Top="18.9" Width="689.85" Height="47.25" Text="Zahlbar innerhalb von 30 Tagen netto auf unser Konto. Bitte geben Sie dabei die Rechnungsnummer an. Skontoabzüge werden nicht akzeptiert." VertAlign="Center" Font="Tahoma, 10pt"/>
+    </ReportSummaryBand>
+    <PageFooterBand Name="PageFooter1" Top="686.17" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

@@ -1,0 +1,21 @@
+﻿@if (OAuthWebSecurity.RegisteredClientData.Count == 0) {
+    <div class="message-info">
+        <p>
+            Внешние службы проверки подлинности не настроены. См. в <a href="http://go.microsoft.com/fwlink/?LinkId=226949">этой статье</a>
+            сведения о настройке входа через сторонние службы в этом приложении ASP.NET.
+        </p>
+    </div>
+} else {
+    <form method="post">
+    @AntiForgery.GetHtml()
+    <fieldset id="socialLoginList">
+        <legend>Вход через другую службу</legend>
+        <p>
+            @foreach (var client in OAuthWebSecurity.RegisteredClientData) {
+                <button type="submit" name="provider" value="@client.AuthenticationClient.ProviderName"
+                        title="Войдите, используя свою учетную запись @client.DisplayName">@client.DisplayName</button>
+            }
+        </p>
+    </fieldset>
+    </form>
+}

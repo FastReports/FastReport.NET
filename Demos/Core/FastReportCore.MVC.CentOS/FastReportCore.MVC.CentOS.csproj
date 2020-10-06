@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RuntimeIdentifiers>centos-x64;win-x64</RuntimeIdentifiers>
+    <DockerTargetOS>Linux</DockerTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1916590" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <Import Project="..\..\..\UsedPackages.version" />
+  <ItemGroup Condition="'$(SolutionFileName)' != 'FastReport.Net.sln'">
+    <PackageReference Include="FastReport.Web" Version="[$(FRCoreWebVersion)-demo,9999)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Reports\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

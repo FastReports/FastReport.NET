@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - FastReport .NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")        
+        
+        @WebReportGlobals.Scripts()
+        @WebReportGlobals.Styles()
+        <script src="~/Scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+   </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("FastReport .NET MVC (Single Page Application)", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <nav>
+                        <ul id="menu">
+                            <li><a href="@(Url.HttpRouteUrl("DefaultApi", new { controller = "Report", id = "index" }))">Home</a></li>
+                            <li><a href="@(Url.HttpRouteUrl("DefaultApi", new { controller = "Report", id = "report" }))">Report</a></li>
+                            <li><a href="@(Url.HttpRouteUrl("DefaultApi", new { controller = "Report", id = "designer" }))">Designer</a></li>
+                            <li><a href="@(Url.HttpRouteUrl("DefaultApi", new { controller = "Report", id = "about" }))">About</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                <div class="report-container">
+                    @RenderBody()
+                </div>
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; 2010-@DateTime.Now.Year - Fast Reports</p>
+                </div>
+            </div>
+        </footer>        
+        @RenderSection("scripts", required: false)
+        <script src="~/app/app.js" type="text/javascript">
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="06/20/2009 22:40:42" ReportInfo.Modified="10/08/2019 01:57:40" ReportInfo.CreatorVersion="1.0.0.0">
+  <Dictionary>
+    <TableDataSource Name="Employees" ReferenceName="Data.Employees" DataType="System.Int32" Enabled="true">
+      <Column Name="ID" DataType="System.Int32"/>
+      <Column Name="Name" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="FontList" ReferenceName="Data.FontList" DataType="System.Int32" Enabled="true">
+      <Column Name="FontID" DataType="System.String"/>
+      <Column Name="FontPath" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text5" Width="718.2" Height="28.35" Text="List of enumerated fonts" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text2" Left="37.8" Width="170.1" Height="18.9" Text="Font" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text4" Left="207.9" Width="500.85" Height="18.9" Text="Path" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text6" Width="37.8" Height="18.9" Text="№"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="18.9" DataSource="FontList">
+      <TextObject Name="Text1" Left="37.8" Width="170.1" Height="18.9" Text="[FontList.FontID]"/>
+      <TextObject Name="Text3" Left="207.9" Width="500.85" Height="18.9" Text="[FontList.FontPath]"/>
+      <TextObject Name="Text7" Width="37.8" Height="18.9" Text="[Row#]"/>
+    </DataBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C596AF2A-CEAA-4DBA-AC67-3AC94AB48BB8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ActiveQueryBuilder</RootNamespace>
+    <AssemblyName>ActiveQueryBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiveQueryBuilder.AdvantageMetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.AdvantageMetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.Core, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.DB2MetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.DB2MetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.FirebirdMetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.FirebirdMetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.InformixMetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.InformixMetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.MSSQLCEMetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.MSSQLCEMetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.MSSQLMetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.MSSQLMetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.MySQLMetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.MySQLMetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.ODBCMetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.ODBCMetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.OLEDBMetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.OLEDBMetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.OracleMetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.OracleMetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.OracleNativeMetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.OracleNativeMetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.PostgreSQLMetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.PostgreSQLMetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.SQLiteMetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.SQLiteMetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.SybaseMetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.SybaseMetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.UniversalMetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.UniversalMetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.View, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.View.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.View.WinForms, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.View.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.View.WPF, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.View.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiveQueryBuilder.VistaDB5MetadataProvider, Version=3.4.9.1086, Culture=neutral, PublicKeyToken=3cbcbcc9bf57ecde, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files\ActiveDBSoft\Active Query Builder 3 .NET Trial Edition\assemblies\ActiveQueryBuilder.VistaDB5MetadataProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport">
+      <HintPath>..\..\..\..\FastReport\bin\Debug\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.ActiveQueryBuilder">
+      <HintPath>..\..\..\..\Extras\Misc\ActiveQueryBuilder\FastReport.ActiveQueryBuilder\FastReport.ActiveQueryBuilder\bin\Debug\FastReport.ActiveQueryBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars, Version=2018.2.3.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files (x86)\FastReports\FastCube.Net Professional\FastReport.Bars.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Editor, Version=2018.2.3.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>J:\Program Files (x86)\FastReports\FastCube.Net Professional\FastReport.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

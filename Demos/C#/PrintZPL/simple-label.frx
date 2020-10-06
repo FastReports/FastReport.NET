@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/19/2017 12:50:38" ReportInfo.Modified="12/19/2017 13:01:23" ReportInfo.CreatorVersion="1.0.0.0">
+  <Dictionary/>
+  <ReportPage Name="Page1" PaperWidth="101.6" PaperHeight="152.4" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0">
+    <PageHeaderBand Name="PageHeader1" Width="384.05" Height="47.25">
+      <TextObject Name="Text1" Left="18.9" Top="18.9" Width="264.6" Height="28.35" Text="Simple Label" Font="Arial, 14pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="48.74" Width="384.05" Height="170.1">
+      <ShapeObject Name="Shape1" Left="18.9" Width="349.65" Height="94.5"/>
+      <BarcodeObject Name="Barcode1" Left="113.4" Top="18.9" Width="128.75" Height="56.7" ShowText="false" Barcode="EAN13"/>
+      <ShapeObject Name="Shape2" Left="94.5" Top="122.85" Width="179.55" Height="18.9" Shape="Ellipse"/>
+      <ShapeObject Name="Shape3" Left="170.1" Top="99.95" Width="28.35" Height="66.15" Shape="Ellipse"/>
+    </DataBand>
+  </ReportPage>
+</Report>
