@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/_SiteLayout.cshtml";
+    Page.Title = "FastReport .Net WebMatrix Demo";
+}
+
+@{
+    FastReport.Web.WebReport report = new FastReport.Web.WebReport();
+    report.Report.Load(Server.MapPath("~/App_Data/Complex (Master-detail + Group).frx"));
+    report.Width = 800;
+    report.Height = 900;
+    System.Data.DataSet dataSet = new System.Data.DataSet(); 
+    dataSet.ReadXml(Server.MapPath("~/App_Data/nwind.xml"));
+    report.Report.RegisterData(dataSet, "NorthWind");
+}
+
+@report.GetHtml()

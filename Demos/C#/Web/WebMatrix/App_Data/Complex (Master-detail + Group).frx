@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report TextQuality="Regular" ReportInfo.Description="Demonstrates the master-detail report with groups. To create this report:&#13;&#10;&#13;&#10;- go &quot;Report|Configure Bands...&quot; menu and create the report structure.&#13;&#10;&#13;&#10;The page can contain service bands such as page header, report title, and one or several data bands or groups.&#13;&#10;&#13;&#10;Each data band can contain one or several data bands or groups.&#13;&#10;&#13;&#10;Each group can contain either nested group or data band. " ReportInfo.Created="01/18/2008 00:04:46" ReportInfo.Modified="06/08/2008 00:32:22" ReportInfo.CreatorVersion="1.0.0.0">
+  <Styles>
+    <Style Name="EvenRows" Fill.Color="Linen"/>
+  </Styles>
+  <Dictionary>
+    <TableDataSource Name="Customers" ReferenceName="NorthWind.Customers">
+      <Column Name="CustomerID" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="ContactName" DataType="System.String"/>
+      <Column Name="ContactTitle" DataType="System.String"/>
+      <Column Name="Address" DataType="System.String"/>
+      <Column Name="City" DataType="System.String"/>
+      <Column Name="Region" DataType="System.String"/>
+      <Column Name="PostalCode" DataType="System.String"/>
+      <Column Name="Country" DataType="System.String"/>
+      <Column Name="Phone" DataType="System.String"/>
+      <Column Name="Fax" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="Orders" ReferenceName="NorthWind.Orders">
+      <Column Name="OrderID" DataType="System.Int32"/>
+      <Column Name="CustomerID" DataType="System.String"/>
+      <Column Name="EmployeeID" DataType="System.Int32"/>
+      <Column Name="OrderDate" DataType="System.DateTime"/>
+      <Column Name="RequiredDate" DataType="System.DateTime"/>
+      <Column Name="ShippedDate" DataType="System.DateTime"/>
+      <Column Name="ShipVia" DataType="System.Int32"/>
+      <Column Name="Freight" DataType="System.Decimal"/>
+      <Column Name="ShipName" DataType="System.String"/>
+      <Column Name="ShipAddress" DataType="System.String"/>
+      <Column Name="ShipCity" DataType="System.String"/>
+      <Column Name="ShipRegion" DataType="System.String"/>
+      <Column Name="ShipPostalCode" DataType="System.String"/>
+      <Column Name="ShipCountry" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="Order Details" ReferenceName="NorthWind.Order Details">
+      <Column Name="OrderID" DataType="System.Int32"/>
+      <Column Name="ProductID" DataType="System.Int32"/>
+      <Column Name="UnitPrice" DataType="System.Decimal"/>
+      <Column Name="Quantity" DataType="System.Int16"/>
+      <Column Name="Discount" DataType="System.Single"/>
+    </TableDataSource>
+    <TableDataSource Name="Products" ReferenceName="NorthWind.Products">
+      <Column Name="ProductID" DataType="System.Int32"/>
+      <Column Name="ProductName" DataType="System.String"/>
+      <Column Name="SupplierID" DataType="System.Int32"/>
+      <Column Name="CategoryID" DataType="System.Int32"/>
+      <Column Name="QuantityPerUnit" DataType="System.String"/>
+      <Column Name="UnitPrice" DataType="System.Decimal"/>
+      <Column Name="UnitsInStock" DataType="System.Int16"/>
+      <Column Name="UnitsOnOrder" DataType="System.Int16"/>
+      <Column Name="ReorderLevel" DataType="System.Int16"/>
+      <Column Name="Discontinued" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="EAN13" DataType="System.String"/>
+    </TableDataSource>
+    <Relation Name="CustomersOrders" ReferenceName="NorthWind.CustomersOrders" ParentDataSource="Customers" ChildDataSource="Orders" ParentColumns="CustomerID" ChildColumns="CustomerID"/>
+    <Relation Name="OrdersOrderDetails" ReferenceName="NorthWind.OrdersOrderDetails" ParentDataSource="Orders" ChildDataSource="Order Details" ParentColumns="OrderID" ChildColumns="OrderID"/>
+    <Relation Name="ProductsOrderDetails" ReferenceName="NorthWind.ProductsOrderDetails" ParentDataSource="Products" ChildDataSource="Order Details" ParentColumns="ProductID" ChildColumns="ProductID"/>
+    <Total Name="SumOfOrder" Expression="[Order Details.UnitPrice] * [Order Details.Quantity]" Evaluator="Data1" Resetter="DataFooter1"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text6" Width="718.2" Height="28.35" Text="CUSTOMERS ORDERS" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 14pt, style=Bold"/>
+    </ReportTitleBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="41.8" Width="718.2" Height="28.35" Fill="Glass" Fill.Color="YellowGreen" Fill.Blend="0.2" Fill.Hatch="true" Condition="[Orders.CustomerID]">
+      <TextObject Name="Text1" Width="349.65" Height="28.35" Text="[Orders.Customers.CompanyName]" VertAlign="Center" Font="Tahoma, 12pt, style=Bold" TextFill.Color="White"/>
+      <DataBand Name="Data2" Top="74.15" Width="718.2" Height="47.25" Border.Lines="Top" Border.Color="White" Border.Width="2" Fill.Color="230, 255, 204" DataSource="Orders" PrintIfDetailEmpty="true">
+        <TextObject Name="Text4" Left="66.15" Width="94.5" Height="18.9" Text="[Orders.OrderID]" VertAlign="Center" Font="Tahoma, 8pt"/>
+        <TextObject Name="Text2" Left="283.5" Width="94.5" Height="18.9" Text="[Orders.OrderDate]" VertAlign="Center" Font="Tahoma, 8pt" Format="Date" Format.Format="d"/>
+        <TextObject Name="Text7" Left="472.5" Width="122.85" Height="18.9" Text="[Orders.ShippedDate]" VertAlign="Center" Font="Tahoma, 8pt" Format="Date" Format.Format="d"/>
+        <TextObject Name="Text5" Width="66.15" Height="18.9" Text="OrderID" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+        <TextObject Name="Text3" Left="207.9" Width="75.6" Height="18.9" Text="OrderDate" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+        <TextObject Name="Text8" Left="387.45" Width="85.05" Height="18.9" Text="ShippedDate" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+        <TextObject Name="Text14" Left="18.9" Top="28.35" Width="189" Height="18.9" Border.Lines="All" Border.Color="White" Fill.Color="YellowGreen" Text="Product name" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+        <TextObject Name="Text15" Left="207.9" Top="28.35" Width="94.5" Height="18.9" Border.Lines="All" Border.Color="White" Fill.Color="YellowGreen" Text="Unit Price" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+        <TextObject Name="Text16" Left="302.4" Top="28.35" Width="94.5" Height="18.9" Border.Lines="All" Border.Color="White" Fill.Color="YellowGreen" Text="Quantity" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+        <DataBand Name="Data1" Top="125.4" Width="718.2" Height="18.9" Fill.Color="230, 255, 204" DataSource="Order Details">
+          <TextObject Name="Text11" Left="18.9" Width="189" Height="18.9" Border.Lines="All" Border.Color="White" Fill.Color="YellowGreen" Text="[Order Details.Products.ProductName]" VertAlign="Center" Font="Tahoma, 8pt"/>
+          <TextObject Name="Text12" Left="207.9" Width="94.5" Height="18.9" Border.Lines="All" Border.Color="White" Fill.Color="YellowGreen" Text="[Order Details.UnitPrice]" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 8pt" Format="Currency" Format.UseLocale="true"/>
+          <TextObject Name="Text13" Left="302.4" Width="94.5" Height="18.9" Border.Lines="All" Border.Color="White" Fill.Color="YellowGreen" Text="[Order Details.Quantity]" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 8pt"/>
+          <DataFooterBand Name="DataFooter1" Top="148.3" Width="718.2" Height="37.8" Fill.Color="230, 255, 204">
+            <TextObject Name="Text9" Left="18.9" Width="378" Height="18.9" Border.Lines="All" Border.Color="White" Fill.Color="YellowGreen" Text="Total this order: [SumOfOrder]" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 8pt, style=Bold" Format="Currency" Format.UseLocale="true"/>
+          </DataFooterBand>
+        </DataBand>
+        <Sort>
+          <Sort Expression="[Orders.OrderID]"/>
+        </Sort>
+      </DataBand>
+    </GroupHeaderBand>
+    <PageFooterBand Name="PageFooter1" Top="190.1" Width="718.2" Height="18.9">
+      <TextObject Name="Text10" Left="623.7" Width="94.5" Height="18.9" Text="[PageN]" HorzAlign="Right" Font="Tahoma, 8pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

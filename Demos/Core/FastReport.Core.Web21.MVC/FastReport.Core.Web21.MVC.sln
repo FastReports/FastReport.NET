@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastReport.Core.Web21.MVC", "FastReport.Core.Web21.MVC.csproj", "{FB5FA238-6C7A-4133-90FF-990E2F26A6B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Academic|Any CPU = Academic|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Demo|Any CPU = Demo|Any CPU
+		Release|Any CPU = Release|Any CPU
+		WinForms|Any CPU = WinForms|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB5FA238-6C7A-4133-90FF-990E2F26A6B2}.Academic|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB5FA238-6C7A-4133-90FF-990E2F26A6B2}.Academic|Any CPU.Build.0 = Debug|Any CPU
+		{FB5FA238-6C7A-4133-90FF-990E2F26A6B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB5FA238-6C7A-4133-90FF-990E2F26A6B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB5FA238-6C7A-4133-90FF-990E2F26A6B2}.Demo|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB5FA238-6C7A-4133-90FF-990E2F26A6B2}.Demo|Any CPU.Build.0 = Debug|Any CPU
+		{FB5FA238-6C7A-4133-90FF-990E2F26A6B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB5FA238-6C7A-4133-90FF-990E2F26A6B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB5FA238-6C7A-4133-90FF-990E2F26A6B2}.WinForms|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB5FA238-6C7A-4133-90FF-990E2F26A6B2}.WinForms|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1DE716F-96DA-4606-857E-A8CF294E29D1}
+	EndGlobalSection
+EndGlobal

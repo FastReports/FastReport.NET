@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><rsm:CrossIndustryDocument xmlns:rsm="urn:ferd:CrossIndustryDocument:invoice:1p0" xmlns:ram="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:12" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <rsm:SpecifiedExchangedDocumentContext>
+    <ram:TestIndicator>
+      <udt:Indicator>true</udt:Indicator>
+    </ram:TestIndicator>
+    <ram:GuidelineSpecifiedDocumentContextParameter>
+      <ram:ID>urn:ferd:CrossIndustryDocument:invoice:1p0:basic</ram:ID>
+    </ram:GuidelineSpecifiedDocumentContextParameter>
+  </rsm:SpecifiedExchangedDocumentContext>
+  <rsm:HeaderExchangedDocument>
+    <ram:ID>2017-415</ram:ID>
+    <ram:Name>Rechnung</ram:Name>
+    <ram:TypeCode>380</ram:TypeCode>
+    <ram:IssueDateTime>
+      <udt:DateTimeString format="102">20170320</udt:DateTimeString>
+    </ram:IssueDateTime>
+    <ram:IncludedNote>
+      <ram:Content>Created by FastReport.Net https://www.fast-report.com</ram:Content>
+    </ram:IncludedNote>
+  </rsm:HeaderExchangedDocument>
+  <rsm:SpecifiedSupplyChainTradeTransaction>
+    <ram:ApplicableSupplyChainTradeAgreement>
+      <ram:SellerTradeParty>
+        <ram:Name>Haimerl Datentechnik</ram:Name>
+        <ram:PostalTradeAddress>
+          <ram:PostcodeCode>94356</ram:PostcodeCode>
+          <ram:LineOne>Kreuzacker 10</ram:LineOne>
+          <ram:CityName>Kirchroth / Kössnach</ram:CityName>
+          <ram:CountryID>DE</ram:CountryID>
+        </ram:PostalTradeAddress>
+        <ram:SpecifiedTaxRegistration>
+          <ram:ID schemeID="VA">DE179151914</ram:ID>
+        </ram:SpecifiedTaxRegistration>
+      </ram:SellerTradeParty>
+      <ram:BuyerTradeParty>
+        <ram:Name>ABB Lackieranlagen GmbH</ram:Name>
+        <ram:PostalTradeAddress>
+          <ram:PostcodeCode>35510</ram:PostcodeCode>
+          <ram:LineOne>Schorbachstrasse 9</ram:LineOne>
+          <ram:CityName>Butzbach</ram:CityName>
+          <ram:CountryID>DE</ram:CountryID>
+        </ram:PostalTradeAddress>
+      </ram:BuyerTradeParty>
+    </ram:ApplicableSupplyChainTradeAgreement>
+    <ram:ApplicableSupplyChainTradeDelivery>
+      <ram:ActualDeliverySupplyChainEvent>
+        <ram:OccurrenceDateTime>
+          <udt:DateTimeString format="102">20170320</udt:DateTimeString>
+        </ram:OccurrenceDateTime>
+      </ram:ActualDeliverySupplyChainEvent>
+    </ram:ApplicableSupplyChainTradeDelivery>
+    <ram:ApplicableSupplyChainTradeSettlement>
+      <ram:PaymentReference>2017-415</ram:PaymentReference>
+      <ram:InvoiceCurrencyCode>EUR</ram:InvoiceCurrencyCode>
+      <ram:ApplicableTradeTax>
+        <ram:CalculatedAmount currencyID="EUR">160.93</ram:CalculatedAmount>
+        <ram:TypeCode>VAT</ram:TypeCode>
+        <ram:BasisAmount currencyID="EUR">847.00</ram:BasisAmount>
+        <ram:ApplicablePercent>19.00</ram:ApplicablePercent>
+      </ram:ApplicableTradeTax>
+      <ram:SpecifiedTradeSettlementMonetarySummation>
+        <ram:LineTotalAmount currencyID="EUR">847.00</ram:LineTotalAmount>
+        <ram:ChargeTotalAmount currencyID="EUR">0.00</ram:ChargeTotalAmount>
+        <ram:AllowanceTotalAmount currencyID="EUR">0.00</ram:AllowanceTotalAmount>
+        <ram:TaxBasisTotalAmount currencyID="EUR">847.00</ram:TaxBasisTotalAmount>
+        <ram:TaxTotalAmount currencyID="EUR">160.93</ram:TaxTotalAmount>
+        <ram:GrandTotalAmount currencyID="EUR">1007.93</ram:GrandTotalAmount>
+      </ram:SpecifiedTradeSettlementMonetarySummation>
+    </ram:ApplicableSupplyChainTradeSettlement>
+    <ram:IncludedSupplyChainTradeLineItem>
+      <ram:AssociatedDocumentLineDocument/>
+      <ram:SpecifiedSupplyChainTradeDelivery>
+        <ram:BilledQuantity unitCode="C62">1.0000</ram:BilledQuantity>
+      </ram:SpecifiedSupplyChainTradeDelivery>
+      <ram:SpecifiedSupplyChainTradeSettlement/>
+      <ram:SpecifiedTradeProduct>
+        <ram:Name>FastReport.Net Professional Edition Single License</ram:Name>
+      </ram:SpecifiedTradeProduct>
+    </ram:IncludedSupplyChainTradeLineItem>
+    <ram:IncludedSupplyChainTradeLineItem>
+      <ram:AssociatedDocumentLineDocument/>
+      <ram:SpecifiedSupplyChainTradeDelivery>
+        <ram:BilledQuantity unitCode="C62">2.0000</ram:BilledQuantity>
+      </ram:SpecifiedSupplyChainTradeDelivery>
+      <ram:SpecifiedSupplyChainTradeSettlement/>
+      <ram:SpecifiedTradeProduct>
+        <ram:Name>FastReport.Net Win+WebForms Edition Single License</ram:Name>
+      </ram:SpecifiedTradeProduct>
+    </ram:IncludedSupplyChainTradeLineItem>
+  </rsm:SpecifiedSupplyChainTradeTransaction>
+</rsm:CrossIndustryDocument>

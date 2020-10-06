@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" TextQuality="Regular" ReportInfo.Name="Simple List" ReportInfo.Author="Fast Reports Inc" ReportInfo.Description="Demonstrates simple list report. To create it:&#13;&#10;- go to &quot;Data&quot; menu and select &quot;Choose Report Data...&quot; item to select datasource;&#13;&#10;- go to &quot;Report|Configure Bands...&quot; menu to create the band structure;&#13;&#10;- return to the report page, doubleclick the data band to show its editor;&#13;&#10;- choose the datasource;&#13;&#10;- drag data from the Data Dictionary window to the band." ReportInfo.Created="01/17/2008 03:05:57" ReportInfo.Modified="01/21/2016 17:04:25" ReportInfo.CreatorVersion="2016.2.0.0">
+  <Styles>
+    <Style Name="Style1" Font="Arial, 22pt, style=Bold, Italic"/>
+    <Style Name="Style2" TextFill.Color="Red" Font="Arial, 16pt, style=Bold"/>
+    <Style Name="Style3" Fill.Color="Yellow" Font="Arial, 14pt"/>
+  </Styles>
+  <Dictionary>
+    <TableDataSource Name="Employees" Alias="CompanyEmployees" ReferenceName="NorthWind.Employees" DataType="System.Int32" Enabled="true">
+      <Column Name="EmployeeID" Alias="Employee ID" DataType="System.Int32"/>
+      <Column Name="LastName" Alias="Last Name" DataType="System.String"/>
+      <Column Name="FirstName" Alias="First Name" DataType="System.String"/>
+      <Column Name="Title" Alias="Title" DataType="System.String"/>
+      <Column Name="TitleOfCourtesy" Alias="Title Of Courtesy" DataType="System.String"/>
+      <Column Name="BirthDate" Alias="Birth Date" DataType="System.DateTime"/>
+      <Column Name="HireDate" Alias="Hire Date" DataType="System.DateTime"/>
+      <Column Name="Address" Alias="Address" DataType="System.String"/>
+      <Column Name="City" Alias="City" DataType="System.String"/>
+      <Column Name="Region" Alias="Region" DataType="System.String"/>
+      <Column Name="PostalCode" Alias="Postal Code" DataType="System.String"/>
+      <Column Name="Country" Alias="Country" DataType="System.String"/>
+      <Column Name="HomePhone" Alias="Home Phone" DataType="System.String"/>
+      <Column Name="Extension" Alias="Extension" DataType="System.String"/>
+      <Column Name="Photo" Alias="Photo" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="Notes" Alias="Notes" DataType="System.String"/>
+      <Column Name="ReportsTo" Alias="Reports To" DataType="System.Int32"/>
+    </TableDataSource>
+    <Parameter Name="Test parameter 1" DataType="System.String" Expression="&quot;Value of parameter 1 by default&quot;" Description="Description of parameter 1"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="103.95" CanGrow="true">
+      <TextObject Name="Text1" Top="47.25" Width="718.2" Height="56.7" Text="EMPLOYEES" HorzAlign="Center" VertAlign="Center" Font="Arial, 22pt, style=Bold, Italic" TextOutline.Color="ActiveBorder" TextOutline.Width="10" Style="Style1"/>
+      <TextObject Name="Text11" Width="718.2" Height="28.35" Anchor="Top, Left, Right" Fill.Color="WhiteSmoke" CanGrow="true" CanShrink="true" Text="[Report.ReportInfo.Description]" Padding="4, 4, 4, 4" Font="Tahoma, 8pt" FirstTabOffset="75.6"/>
+      <ChildBand Name="Child2" Top="107.95" Width="718.2" Height="56.7">
+        <TextObject Name="Text18" Left="9.45" Top="18.9" Width="425.25" Height="18.9" Text="[Test parameter 1]"/>
+      </ChildBand>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="168.65" Width="718.2" Height="217.35" Border.Lines="All" Border.Color="Maroon" CanGrow="true" DataSource="Employees">
+      <TextObject Name="Text3" Left="9.45" Top="66.15" Width="103.95" Height="18.9" Text="Birth date:" VertAlign="Center" Font="Tahoma, 9pt, style=Bold"/>
+      <TextObject Name="Text4" Left="113.4" Top="66.15" Width="453.6" Height="18.9" Text="[CompanyEmployees.Birth Date]" Format="Date" Format.Format="D" VertAlign="Center" Font="Tahoma, 9pt"/>
+      <TextObject Name="Text5" Left="9.45" Top="103.95" Width="103.95" Height="18.9" Text="Address:" VertAlign="Center" Font="Tahoma, 9pt, style=Bold"/>
+      <TextObject Name="Text6" Left="113.4" Top="103.95" Width="453.6" Height="18.9" CanGrow="true" Text="[CompanyEmployees.Address]" VertAlign="Center" Font="Tahoma, 9pt"/>
+      <TextObject Name="Text7" Left="9.45" Top="122.85" Width="103.95" Height="18.9" Text="Phone:" VertAlign="Center" Font="Tahoma, 9pt, style=Bold"/>
+      <TextObject Name="Text8" Left="113.4" Top="122.85" Width="453.6" Height="18.9" Text="[CompanyEmployees.Home Phone]" VertAlign="Center" Font="Tahoma, 9pt"/>
+      <TextObject Name="Text9" Left="113.4" Top="151.2" Width="453.6" Height="56.7" CanGrow="true" CanShrink="true" Text="[CompanyEmployees.Notes]" Padding="2, 0, 2, 10" Font="Tahoma, 9pt"/>
+      <PictureObject Left="576.45" Top="47.25" Width="132.3" Height="162.54" Border.Lines="All" Border.Color="Maroon" CanGrow="true" CanShrink="true" DataColumn="CompanyEmployees.Photo"/>
+      <TextObject Name="Text13" Left="113.4" Top="47.25" Width="453.6" Height="18.9" Text="[CompanyEmployees.Hire Date]" Format="Date" Format.Format="d" VertAlign="Center" Font="Tahoma, 9pt"/>
+      <TextObject Name="Text14" Left="113.4" Top="85.05" Width="453.6" Height="18.9" Text="[CompanyEmployees.City]" VertAlign="Center" Font="Tahoma, 9pt"/>
+      <TextObject Name="Text15" Left="9.45" Top="47.25" Width="103.95" Height="18.9" Text="Hire date:" VertAlign="Center" Font="Tahoma, 9pt, style=Bold"/>
+      <TextObject Name="Text16" Left="9.45" Top="85.05" Width="103.95" Height="18.9" Text="City:" VertAlign="Center" Font="Tahoma, 9pt, style=Bold"/>
+      <TextObject Name="Text17" Left="9.45" Top="151.2" Width="103.95" Height="18.9" Text="Notes:" Font="Tahoma, 9pt, style=Bold"/>
+      <TextObject Name="Text2" Width="718.2" Height="37.8" Border.Lines="All" Border.Color="Maroon" Fill.Color="DarkRed" Text="[CompanyEmployees.First Name] [CompanyEmployees.Last Name]" Padding="10, 0, 2, 0" VertAlign="Center" Font="Tahoma, 12pt, style=Bold" TextFill.Color="White"/>
+      <ChildBand Name="Child1" Top="390" Width="718.2" Height="18.9"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="412.9" Width="718.2" Height="28.35" Fill.Color="WhiteSmoke" CanGrow="true">
+      <TextObject Name="Text10" Left="614.25" Width="94.5" Height="28.35" Text="[PageN]" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 8pt"/>
+      <TextObject Name="Text12" Left="9.45" Width="217.35" Height="28.35" Cursor="Hand" Hyperlink.Value="https://www.fast-report.com/en/product/fast-report-net/" Text="Generated by FastReport .NET" VertAlign="Center" Font="Tahoma, 8pt, style=Underline" TextFill.Color="Blue"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

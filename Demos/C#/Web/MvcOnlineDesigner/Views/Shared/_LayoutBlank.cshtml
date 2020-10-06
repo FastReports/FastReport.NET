@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - FastReport .NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @WebReportGlobals.Scripts()
+        @WebReportGlobals.Styles()
+   </head>
+    <body>
+          <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("FastReport .NET MVC (Razor)", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Prepared", "Prepared", "Home")</li>
+                            <li>@Html.ActionLink("Dialogs", "Dialogs", "Home")</li>
+                            <li>@Html.ActionLink("Fit page", "FitPage", "Home")</li>
+                            <li>@Html.ActionLink("Design report", "Designer", "Home")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="">
+                @RenderBody()
+            </section>
+        </div>
+    </body>
+</html>
+

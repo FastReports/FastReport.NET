@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+@{  // FastReport .Net prepared report preview example.
+    FastReport.Web.WebReport webReport = new FastReport.Web.WebReport(true, true);
+    webReport.ToolbarIconsStyle = FastReport.Web.ToolbarIconsStyle.Black;
+    webReport.ToolbarBackgroundStyle = FastReport.Web.ToolbarBackgroundStyle.None;
+    webReport.ToolbarStyle = FastReport.Web.ToolbarStyle.Large;
+    webReport.ToolbarColor = System.Drawing.Color.White;
+    webReport.BorderWidth = 1;
+    webReport.BorderColor = System.Drawing.Color.Black;
+    webReport.ShowZoomButton = false;
+    webReport.ShowExports = false;
+    webReport.PrintInBrowser = false;
+    webReport.XlsxPrintFitPage = true;
+    webReport.LoadPrepared(Server.MapPath("~/App_Data/Prepared.fpx"));
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FastReport Prepared Report Preview</title>
+</head>
+<body>
+     @webReport.GetHtml()
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Reports">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ReportName" type="xs:string" minOccurs="0" />
+                <xs:element name="ReportStream" type="xs:base64Binary" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Reports>
+    <ReportName>test report 1</ReportName>
+    <ReportStream>77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxSZXBvcnQgUmVwb3J0SW5mby5DcmVhdGVkPSIwNy8xMC8yMDA5IDE3OjM0OjQyIiBSZXBvcnRJbmZvLk1vZGlmaWVkPSIwNy8xMC8yMDA5IDE3OjQxOjQwIiBSZXBvcnRJbmZvLkNyZWF0b3JWZXJzaW9uPSIxLjAuMC4wIj4NCiAgPERpY3Rpb25hcnkvPg0KICA8UmVwb3J0UGFnZSBOYW1lPSJQYWdlMSI+DQogICAgPFJlcG9ydFRpdGxlQmFuZCBOYW1lPSJSZXBvcnRUaXRsZTEiIFdpZHRoPSI3MTguMiIgSGVpZ2h0PSIzNy44Ij4NCiAgICAgIDxUZXh0T2JqZWN0IE5hbWU9IlRleHQxIiBMZWZ0PSIyMDcuOSIgVG9wPSI5LjQ1IiBXaWR0aD0iMjI2LjgiIEhlaWdodD0iMTguOSIgVGV4dD0idGVzdCByZXBvcnQgMSIgRm9udD0iQXJpYWwsIDEwcHQsIHN0eWxlPUJvbGQiLz4NCiAgICA8L1JlcG9ydFRpdGxlQmFuZD4NCiAgICA8UGFnZUhlYWRlckJhbmQgTmFtZT0iUGFnZUhlYWRlcjEiIFRvcD0iNDEuOCIgV2lkdGg9IjcxOC4yIiBIZWlnaHQ9IjI4LjM1Ii8+DQogICAgPERhdGFCYW5kIE5hbWU9IkRhdGExIiBUb3A9Ijc0LjE1IiBXaWR0aD0iNzE4LjIiIEhlaWdodD0iMTguOSIvPg0KICAgIDxQYWdlRm9vdGVyQmFuZCBOYW1lPSJQYWdlRm9vdGVyMSIgVG9wPSI5Ny4wNSIgV2lkdGg9IjcxOC4yIiBIZWlnaHQ9IjE4LjkiPg0KICAgICAgPFRleHRPYmplY3QgTmFtZT0iVGV4dDIiIExlZnQ9IjYyMy43IiBXaWR0aD0iOTQuNSIgSGVpZ2h0PSIxOC45IiBUZXh0PSJbUGFnZV0iLz4NCiAgICA8L1BhZ2VGb290ZXJCYW5kPg0KICA8L1JlcG9ydFBhZ2U+DQo8L1JlcG9ydD4NCg==</ReportStream>
+  </Reports>
+  <Reports>
+    <ReportName>inherited from "test report 1"</ReportName>
+    <ReportStream>77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxpbmhlcml0ZWQgQmFzZVJlcG9ydD0idGVzdCByZXBvcnQgMSIgUmVwb3J0SW5mby5DcmVhdGVkPSIwNy8xMC8yMDA5IDE3OjM0OjQyIiBSZXBvcnRJbmZvLk1vZGlmaWVkPSIwNy8xMC8yMDA5IDE3OjU5OjAxIiBSZXBvcnRJbmZvLkNyZWF0b3JWZXJzaW9uPSIxLjAuMC4wIj4NCiAgPERpY3Rpb25hcnkvPg0KICA8aW5oZXJpdGVkIE5hbWU9IlBhZ2UxIj4NCiAgICA8aW5oZXJpdGVkIE5hbWU9IlJlcG9ydFRpdGxlMSI+DQogICAgICA8aW5oZXJpdGVkIE5hbWU9IlRleHQxIi8+DQogICAgPC9pbmhlcml0ZWQ+DQogICAgPGluaGVyaXRlZCBOYW1lPSJQYWdlSGVhZGVyMSIvPg0KICAgIDxpbmhlcml0ZWQgTmFtZT0iRGF0YTEiPg0KICAgICAgPFRleHRPYmplY3QgTmFtZT0iVGV4dDMiIFpPcmRlcj0iMCIgTGVmdD0iMTg5IiBXaWR0aD0iMjgzLjUiIEhlaWdodD0iMTguOSIgVGV4dD0ib2JqZWN0IGZyb20gdGhpcyByZXBvcnQgKG5vdCBpbmhlcml0ZWQpIi8+DQogICAgPC9pbmhlcml0ZWQ+DQogICAgPGluaGVyaXRlZCBOYW1lPSJQYWdlRm9vdGVyMSI+DQogICAgICA8aW5oZXJpdGVkIE5hbWU9IlRleHQyIi8+DQogICAgPC9pbmhlcml0ZWQ+DQogIDwvaW5oZXJpdGVkPg0KPC9pbmhlcml0ZWQ+DQo=</ReportStream>
+  </Reports>
+</NewDataSet>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastReportCore.MVC.CentOS", "FastReportCore.MVC.CentOS.csproj", "{3E6BB871-512F-4427-B5D2-0185B905B7BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E6BB871-512F-4427-B5D2-0185B905B7BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E6BB871-512F-4427-B5D2-0185B905B7BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E6BB871-512F-4427-B5D2-0185B905B7BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E6BB871-512F-4427-B5D2-0185B905B7BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E44B1699-6D11-401B-9AB6-54D2B2665BE7}
+	EndGlobalSection
+EndGlobal

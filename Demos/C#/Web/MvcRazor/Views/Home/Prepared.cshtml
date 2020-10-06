@@ -1,0 +1,10 @@
+﻿@{    
+    ViewBag.Title = "Prepared report";
+    ViewBag.Message = "Show prepared report";
+}
+
+<hgroup class="title">
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+@ViewBag.WebReport.GetHtml()
